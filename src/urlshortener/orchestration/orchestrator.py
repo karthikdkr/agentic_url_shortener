@@ -7,7 +7,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
-from .agents import Agent, TransientAgentError, build_agents
+from .agents import TransientAgentError, build_agents
 from .graph import NODE_MAP, NODES, descendants
 from .policies import critical, inspect_artifact
 from .store import WorkflowStore

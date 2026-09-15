@@ -2,17 +2,13 @@ from __future__ import annotations
 
 import asyncio
 import json
-import sys
 from pathlib import Path
-
-ROOT = Path(__file__).resolve().parents[1]
-SRC = ROOT / "src"
-if str(SRC) not in sys.path:
-    sys.path.insert(0, str(SRC))
 
 from urlshortener.orchestration.orchestrator import Orchestrator
 from urlshortener.orchestration.store import WorkflowStore
 from urlshortener.orchestration.workflow_models import RunStatus
+
+ROOT = Path(__file__).resolve().parents[1]
 
 
 async def execute_scenario(orchestrator: Orchestrator, path: Path):
