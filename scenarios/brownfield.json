@@ -1,0 +1,10 @@
+{
+  "name": "Brownfield analytics privacy improvement",
+  "scenario_type": "brownfield",
+  "requirement": "Improve existing URL analytics so useful referrer trends are retained without storing raw visitor IP addresses, and update tests and documentation.",
+  "expected_control_points": [
+    "Inspect existing source modules before planning the change",
+    "Limit the change surface to relevant service, model, API, and test files",
+    "Run regression and security validation before release approval"
+  ]
+}

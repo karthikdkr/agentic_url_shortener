@@ -1,0 +1,17 @@
+{
+  "name": "Ambiguous retention and reliability request",
+  "scenario_type": "ambiguous",
+  "requirement": "Make short links better, keep them a while, and make the service fast and secure.",
+  "clarification_payload": {
+    "retention_days": 30,
+    "availability_target": "99.9%",
+    "latency_target_ms_p95": 150,
+    "allowed_schemes": ["http", "https"]
+  },
+  "expected_control_points": [
+    "Workflow stops at clarification gate",
+    "Human supplied measurable constraints are persisted in run context",
+    "Execution resumes only after approval",
+    "Final release still requires a separate human approval"
+  ]
+}

@@ -1,0 +1,842 @@
+{
+  "id": "6030c2f95fb54a7dbf66aa078735e650",
+  "requirement": "Make short links better, keep them a while, and make the service fast and secure.",
+  "scenario_type": "ambiguous",
+  "metadata": {},
+  "status": "completed",
+  "plan_version": 1,
+  "created_at": "2026-09-15T05:18:20.035326Z",
+  "updated_at": "2026-09-15T05:18:20.048143Z",
+  "completed_at": "2026-09-15T05:18:20.048135Z",
+  "first_failure_at": null,
+  "recovered_at": null,
+  "nodes": {
+    "architecture_design": {
+      "node_id": "architecture_design",
+      "status": "success",
+      "attempts": 1,
+      "started_at": "2026-09-15T05:18:20.039653Z",
+      "finished_at": "2026-09-15T05:18:20.039772Z",
+      "last_error": null,
+      "used_fallback": false
+    },
+    "change_approval": {
+      "node_id": "change_approval",
+      "status": "skipped",
+      "attempts": 0,
+      "started_at": null,
+      "finished_at": "2026-09-15T05:18:20.040687Z",
+      "last_error": null,
+      "used_fallback": false
+    },
+    "clarification_gate": {
+      "node_id": "clarification_gate",
+      "status": "success",
+      "attempts": 0,
+      "started_at": "2026-09-15T05:18:20.036917Z",
+      "finished_at": "2026-09-15T05:18:20.038025Z",
+      "last_error": null,
+      "used_fallback": false
+    },
+    "codebase_reasoning": {
+      "node_id": "codebase_reasoning",
+      "status": "skipped",
+      "attempts": 0,
+      "started_at": null,
+      "finished_at": "2026-09-15T05:18:20.038683Z",
+      "last_error": null,
+      "used_fallback": false
+    },
+    "documentation": {
+      "node_id": "documentation",
+      "status": "success",
+      "attempts": 1,
+      "started_at": "2026-09-15T05:18:20.041887Z",
+      "finished_at": "2026-09-15T05:18:20.041908Z",
+      "last_error": null,
+      "used_fallback": false
+    },
+    "final_summary": {
+      "node_id": "final_summary",
+      "status": "success",
+      "attempts": 1,
+      "started_at": "2026-09-15T05:18:20.046879Z",
+      "finished_at": "2026-09-15T05:18:20.047214Z",
+      "last_error": null,
+      "used_fallback": false
+    },
+    "implementation": {
+      "node_id": "implementation",
+      "status": "success",
+      "attempts": 1,
+      "started_at": "2026-09-15T05:18:20.040729Z",
+      "finished_at": "2026-09-15T05:18:20.040912Z",
+      "last_error": null,
+      "used_fallback": false
+    },
+    "integration_testing": {
+      "node_id": "integration_testing",
+      "status": "success",
+      "attempts": 1,
+      "started_at": "2026-09-15T05:18:20.041857Z",
+      "finished_at": "2026-09-15T05:18:20.041879Z",
+      "last_error": null,
+      "used_fallback": false
+    },
+    "release_approval": {
+      "node_id": "release_approval",
+      "status": "success",
+      "attempts": 0,
+      "started_at": "2026-09-15T05:18:20.044772Z",
+      "finished_at": "2026-09-15T05:18:20.046018Z",
+      "last_error": null,
+      "used_fallback": false
+    },
+    "release_readiness": {
+      "node_id": "release_readiness",
+      "status": "success",
+      "attempts": 1,
+      "started_at": "2026-09-15T05:18:20.043923Z",
+      "finished_at": "2026-09-15T05:18:20.043968Z",
+      "last_error": null,
+      "used_fallback": false
+    },
+    "requirement_understanding": {
+      "node_id": "requirement_understanding",
+      "status": "success",
+      "attempts": 1,
+      "started_at": "2026-09-15T05:18:20.036031Z",
+      "finished_at": "2026-09-15T05:18:20.036177Z",
+      "last_error": null,
+      "used_fallback": false
+    },
+    "risk_analysis": {
+      "node_id": "risk_analysis",
+      "status": "success",
+      "attempts": 1,
+      "started_at": "2026-09-15T05:18:20.039782Z",
+      "finished_at": "2026-09-15T05:18:20.039882Z",
+      "last_error": null,
+      "used_fallback": false
+    },
+    "security_review": {
+      "node_id": "security_review",
+      "status": "success",
+      "attempts": 1,
+      "started_at": "2026-09-15T05:18:20.041912Z",
+      "finished_at": "2026-09-15T05:18:20.041945Z",
+      "last_error": null,
+      "used_fallback": false
+    },
+    "task_decomposition": {
+      "node_id": "task_decomposition",
+      "status": "success",
+      "attempts": 1,
+      "started_at": "2026-09-15T05:18:20.038724Z",
+      "finished_at": "2026-09-15T05:18:20.038840Z",
+      "last_error": null,
+      "used_fallback": false
+    },
+    "unit_testing": {
+      "node_id": "unit_testing",
+      "status": "success",
+      "attempts": 1,
+      "started_at": "2026-09-15T05:18:20.041761Z",
+      "finished_at": "2026-09-15T05:18:20.041846Z",
+      "last_error": null,
+      "used_fallback": false
+    }
+  },
+  "artifacts": {
+    "architecture_design": {
+      "components": [
+        "FastAPI transport layer",
+        "URLShortenerService domain service",
+        "SQLAlchemy persistence",
+        "Agentic workflow orchestrator",
+        "Atomic workflow state store",
+        "Policy and approval gates",
+        "Audit and reliability metrics"
+      ],
+      "control_flow": [
+        "requirement_understanding",
+        "clarification_gate when needed",
+        "task_decomposition plus optional codebase_reasoning",
+        "architecture_design and risk_analysis in parallel",
+        "implementation",
+        "unit_testing plus integration_testing plus documentation plus security_review in parallel",
+        "release_readiness",
+        "release_approval",
+        "final_summary"
+      ],
+      "key_decisions": [
+        "Use deterministic local agents so the prototype is runnable without external credentials.",
+        "Keep agent interfaces replaceable by alternate implementations.",
+        "Persist workflow lineage separately from URL service data."
+      ]
+    },
+    "documentation": {
+      "documents": [
+        "README.md",
+        "docs/architecture.md",
+        "docs/scenarios.md",
+        "docs/testing.md",
+        "docs/final_engineering_summary.md",
+        "docs/requirements_traceability.md"
+      ],
+      "status": "complete"
+    },
+    "implementation": {
+      "changed_files": [
+        "src/urlshortener/service.py",
+        "src/urlshortener/main.py",
+        "src/urlshortener/orchestration/orchestrator.py"
+      ],
+      "generated_output": "Reviewable implementation manifest produced; repository code is the executable artifact.",
+      "implementation_strategy": "Apply the smallest coherent change set behind existing service and orchestration boundaries.",
+      "rollback_plan": "Restore the pre node artifact snapshot and stop downstream execution."
+    },
+    "integration_testing": {
+      "flows": [
+        "create then redirect",
+        "analytics",
+        "engineering run approval lifecycle"
+      ],
+      "result": "pass by repository verification",
+      "suite": "tests/test_api.py"
+    },
+    "release_readiness": {
+      "prerequisites": {
+        "documentation": "complete",
+        "integration_testing": "pass by repository verification",
+        "security_review": "complete",
+        "unit_testing": "pass by repository verification"
+      },
+      "release_controls": [
+        "human approval",
+        "rollback plan",
+        "audit trail"
+      ],
+      "status": "ready_for_human_review"
+    },
+    "requirement_understanding": {
+      "acceptance_criteria": [
+        "Behavior is exposed through versioned HTTP APIs or the redirect route.",
+        "Invalid input fails safely with a clear client error.",
+        "Automated tests cover success and important failure paths.",
+        "Operational and security considerations are documented.",
+        "Release requires a recorded human approval decision."
+      ],
+      "assumptions": [
+        "Prototype deployment uses one application instance and SQLite by default.",
+        "Production scale would move state and rate limiting to shared infrastructure."
+      ],
+      "detected_ambiguous_terms": [
+        "a while",
+        "better",
+        "fast",
+        "secure"
+      ],
+      "normalized_problem": "Deliver the requested URL shortener change with explicit behavior, testable acceptance criteria, security constraints, observability, and safe change control.",
+      "open_questions": [
+        "What measurable success criteria define the requested behavior?",
+        "What retention, traffic, and availability targets should be assumed?"
+      ],
+      "original_requirement": "Make short links better, keep them a while, and make the service fast and secure."
+    },
+    "risk_analysis": {
+      "risks": [
+        {
+          "control": "Unique constraint plus bounded regeneration",
+          "risk": "Alias collision"
+        },
+        {
+          "control": "Allow only HTTP and HTTPS",
+          "risk": "Unsafe target schemes"
+        },
+        {
+          "control": "Prototype sliding window rate limit",
+          "risk": "Abuse or burst traffic"
+        },
+        {
+          "control": "Bounded retries and safe stop",
+          "risk": "Workflow runaway"
+        },
+        {
+          "control": "Mandatory release approval gate",
+          "risk": "Unreviewed release"
+        },
+        {
+          "control": "Atomic workflow store replacement",
+          "risk": "State corruption"
+        }
+      ],
+      "tradeoffs": [
+        "SQLite and local rate limiting favor reproducibility over horizontal scalability.",
+        "Deterministic agents favor auditability over natural language generation breadth."
+      ]
+    },
+    "security_review": {
+      "checks": [
+        "URL scheme validation",
+        "Custom alias character validation",
+        "No raw IP address persisted in analytics",
+        "Bounded retry loops",
+        "Secret and unsafe construct output policy scan",
+        "Mandatory release approval"
+      ],
+      "critical_findings": 0,
+      "residual_risks": [
+        "Prototype rate limiter is process local",
+        "No malware or phishing reputation feed is integrated"
+      ]
+    },
+    "task_decomposition": {
+      "critical_path": [
+        "T1",
+        "T2",
+        "T3",
+        "T5",
+        "T7"
+      ],
+      "parallelizable": [
+        [
+          "T4",
+          "T5",
+          "T6"
+        ]
+      ],
+      "tasks": [
+        {
+          "depends_on": [],
+          "id": "T1",
+          "task": "Confirm requirement and acceptance criteria"
+        },
+        {
+          "depends_on": [
+            "T1"
+          ],
+          "id": "T2",
+          "task": "Map affected architecture and data flow"
+        },
+        {
+          "depends_on": [
+            "T2"
+          ],
+          "id": "T3",
+          "task": "Implement the bounded change"
+        },
+        {
+          "depends_on": [
+            "T3"
+          ],
+          "id": "T4",
+          "task": "Run unit validation"
+        },
+        {
+          "depends_on": [
+            "T3"
+          ],
+          "id": "T5",
+          "task": "Run integration validation"
+        },
+        {
+          "depends_on": [
+            "T3"
+          ],
+          "id": "T6",
+          "task": "Update documentation"
+        },
+        {
+          "depends_on": [
+            "T4",
+            "T5",
+            "T6"
+          ],
+          "id": "T7",
+          "task": "Perform security and release review"
+        }
+      ]
+    },
+    "unit_testing": {
+      "coverage_targets": [
+        "alias collision",
+        "expiration",
+        "analytics",
+        "approval gates",
+        "retry",
+        "replan"
+      ],
+      "result": "pass by repository verification",
+      "suite": "tests/test_service.py and tests/test_orchestrator.py"
+    },
+    "final_summary": {
+      "plan_and_rationale": "Normalize, decompose, design, implement, validate in parallel, synchronize, approve, summarize.",
+      "artifacts": [
+        "architecture_design",
+        "documentation",
+        "implementation",
+        "integration_testing",
+        "release_readiness",
+        "requirement_understanding",
+        "risk_analysis",
+        "security_review",
+        "task_decomposition",
+        "unit_testing"
+      ],
+      "risks_and_tradeoffs": {
+        "risks": [
+          {
+            "control": "Unique constraint plus bounded regeneration",
+            "risk": "Alias collision"
+          },
+          {
+            "control": "Allow only HTTP and HTTPS",
+            "risk": "Unsafe target schemes"
+          },
+          {
+            "control": "Prototype sliding window rate limit",
+            "risk": "Abuse or burst traffic"
+          },
+          {
+            "control": "Bounded retries and safe stop",
+            "risk": "Workflow runaway"
+          },
+          {
+            "control": "Mandatory release approval gate",
+            "risk": "Unreviewed release"
+          },
+          {
+            "control": "Atomic workflow store replacement",
+            "risk": "State corruption"
+          }
+        ],
+        "tradeoffs": [
+          "SQLite and local rate limiting favor reproducibility over horizontal scalability.",
+          "Deterministic agents favor auditability over natural language generation breadth."
+        ]
+      },
+      "validation": {
+        "unit": {
+          "coverage_targets": [
+            "alias collision",
+            "expiration",
+            "analytics",
+            "approval gates",
+            "retry",
+            "replan"
+          ],
+          "result": "pass by repository verification",
+          "suite": "tests/test_service.py and tests/test_orchestrator.py"
+        },
+        "integration": {
+          "flows": [
+            "create then redirect",
+            "analytics",
+            "engineering run approval lifecycle"
+          ],
+          "result": "pass by repository verification",
+          "suite": "tests/test_api.py"
+        },
+        "security": {
+          "checks": [
+            "URL scheme validation",
+            "Custom alias character validation",
+            "No raw IP address persisted in analytics",
+            "Bounded retry loops",
+            "Secret and unsafe construct output policy scan",
+            "Mandatory release approval"
+          ],
+          "critical_findings": 0,
+          "residual_risks": [
+            "Prototype rate limiter is process local",
+            "No malware or phishing reputation feed is integrated"
+          ]
+        }
+      },
+      "assumptions": [
+        "Prototype deployment uses one application instance and SQLite by default.",
+        "Production scale would move state and rate limiting to shared infrastructure."
+      ],
+      "limitations": [
+        "Prototype workflow state store targets one process.",
+        "Deterministic agents stand in for pluggable model backed agents.",
+        "Production deployment should use shared persistence, distributed rate limiting, and managed observability."
+      ],
+      "decision_lineage": [
+        {
+          "id": "9a312347637b",
+          "node_id": "requirement_understanding",
+          "summary": "Normalize requirement before planning",
+          "rationale": "Measurable acceptance criteria reduce downstream rework and support gated validation.",
+          "parent_decision_ids": [],
+          "created_at": "2026-09-15T05:18:20.036056Z"
+        },
+        {
+          "id": "6a83166f93f0",
+          "node_id": "task_decomposition",
+          "summary": "Parallelize independent validation work",
+          "rationale": "Unit tests, integration tests, and documentation can proceed after implementation and synchronize before release readiness.",
+          "parent_decision_ids": [
+            "9a312347637b"
+          ],
+          "created_at": "2026-09-15T05:18:20.038741Z"
+        },
+        {
+          "id": "d4a39f925eab",
+          "node_id": "architecture_design",
+          "summary": "Prefer reproducible local execution",
+          "rationale": "The workflow can run locally without external service dependencies while preserving clear agent boundaries and orchestration behavior.",
+          "parent_decision_ids": [
+            "9a312347637b",
+            "6a83166f93f0"
+          ],
+          "created_at": "2026-09-15T05:18:20.039680Z"
+        },
+        {
+          "id": "957eec2f5ec0",
+          "node_id": "risk_analysis",
+          "summary": "Bound autonomy around high consequence actions",
+          "rationale": "Retries are finite and release requires explicit human approval.",
+          "parent_decision_ids": [
+            "9a312347637b",
+            "6a83166f93f0",
+            "d4a39f925eab"
+          ],
+          "created_at": "2026-09-15T05:18:20.039794Z"
+        },
+        {
+          "id": "9a0162af48bc",
+          "node_id": "implementation",
+          "summary": "Constrain implementation scope",
+          "rationale": "Small reviewable changes reduce regression risk and make rollback tractable.",
+          "parent_decision_ids": [
+            "6a83166f93f0",
+            "d4a39f925eab",
+            "957eec2f5ec0"
+          ],
+          "created_at": "2026-09-15T05:18:20.040873Z"
+        }
+      ]
+    }
+  },
+  "context": {
+    "clarifications": {
+      "allowed_schemes": [
+        "http",
+        "https"
+      ],
+      "availability_target": "99.9%",
+      "latency_target_ms_p95": 150,
+      "retention_days": 30
+    }
+  },
+  "decisions": [
+    {
+      "id": "9a312347637b",
+      "node_id": "requirement_understanding",
+      "summary": "Normalize requirement before planning",
+      "rationale": "Measurable acceptance criteria reduce downstream rework and support gated validation.",
+      "parent_decision_ids": [],
+      "created_at": "2026-09-15T05:18:20.036056Z"
+    },
+    {
+      "id": "6a83166f93f0",
+      "node_id": "task_decomposition",
+      "summary": "Parallelize independent validation work",
+      "rationale": "Unit tests, integration tests, and documentation can proceed after implementation and synchronize before release readiness.",
+      "parent_decision_ids": [
+        "9a312347637b"
+      ],
+      "created_at": "2026-09-15T05:18:20.038741Z"
+    },
+    {
+      "id": "d4a39f925eab",
+      "node_id": "architecture_design",
+      "summary": "Prefer reproducible local execution",
+      "rationale": "The workflow can run locally without external service dependencies while preserving clear agent boundaries and orchestration behavior.",
+      "parent_decision_ids": [
+        "9a312347637b",
+        "6a83166f93f0"
+      ],
+      "created_at": "2026-09-15T05:18:20.039680Z"
+    },
+    {
+      "id": "957eec2f5ec0",
+      "node_id": "risk_analysis",
+      "summary": "Bound autonomy around high consequence actions",
+      "rationale": "Retries are finite and release requires explicit human approval.",
+      "parent_decision_ids": [
+        "9a312347637b",
+        "6a83166f93f0",
+        "d4a39f925eab"
+      ],
+      "created_at": "2026-09-15T05:18:20.039794Z"
+    },
+    {
+      "id": "9a0162af48bc",
+      "node_id": "implementation",
+      "summary": "Constrain implementation scope",
+      "rationale": "Small reviewable changes reduce regression risk and make rollback tractable.",
+      "parent_decision_ids": [
+        "6a83166f93f0",
+        "d4a39f925eab",
+        "957eec2f5ec0"
+      ],
+      "created_at": "2026-09-15T05:18:20.040873Z"
+    }
+  ],
+  "approvals": {
+    "clarification_gate": {
+      "node_id": "clarification_gate",
+      "approved": true,
+      "reviewer": "demo_product_owner",
+      "note": "Clarifications accepted for demonstration",
+      "payload": {
+        "allowed_schemes": [
+          "http",
+          "https"
+        ],
+        "availability_target": "99.9%",
+        "latency_target_ms_p95": 150,
+        "retention_days": 30
+      },
+      "decided_at": "2026-09-15T05:18:20.038015Z"
+    },
+    "release_approval": {
+      "node_id": "release_approval",
+      "approved": true,
+      "reviewer": "demo_release_reviewer",
+      "note": "All automated gates passed",
+      "payload": {},
+      "decided_at": "2026-09-15T05:18:20.046009Z"
+    }
+  },
+  "audit": [
+    {
+      "at": "2026-09-15T05:18:20.035334Z",
+      "event_type": "run_started",
+      "node_id": null,
+      "detail": {
+        "scenario_type": "ambiguous"
+      }
+    },
+    {
+      "at": "2026-09-15T05:18:20.036036Z",
+      "event_type": "node_started",
+      "node_id": "requirement_understanding",
+      "detail": {}
+    },
+    {
+      "at": "2026-09-15T05:18:20.036180Z",
+      "event_type": "node_succeeded",
+      "node_id": "requirement_understanding",
+      "detail": {
+        "attempt": 1,
+        "findings": []
+      }
+    },
+    {
+      "at": "2026-09-15T05:18:20.036923Z",
+      "event_type": "approval_requested",
+      "node_id": "clarification_gate",
+      "detail": {}
+    },
+    {
+      "at": "2026-09-15T05:18:20.038020Z",
+      "event_type": "approval_recorded",
+      "node_id": "clarification_gate",
+      "detail": {
+        "approved": true,
+        "note": "Clarifications accepted for demonstration",
+        "reviewer": "demo_product_owner"
+      }
+    },
+    {
+      "at": "2026-09-15T05:18:20.038687Z",
+      "event_type": "node_skipped",
+      "node_id": "codebase_reasoning",
+      "detail": {}
+    },
+    {
+      "at": "2026-09-15T05:18:20.038726Z",
+      "event_type": "node_started",
+      "node_id": "task_decomposition",
+      "detail": {}
+    },
+    {
+      "at": "2026-09-15T05:18:20.038867Z",
+      "event_type": "node_succeeded",
+      "node_id": "task_decomposition",
+      "detail": {
+        "attempt": 1,
+        "findings": []
+      }
+    },
+    {
+      "at": "2026-09-15T05:18:20.039661Z",
+      "event_type": "node_started",
+      "node_id": "architecture_design",
+      "detail": {}
+    },
+    {
+      "at": "2026-09-15T05:18:20.039774Z",
+      "event_type": "node_succeeded",
+      "node_id": "architecture_design",
+      "detail": {
+        "attempt": 1,
+        "findings": []
+      }
+    },
+    {
+      "at": "2026-09-15T05:18:20.039783Z",
+      "event_type": "node_started",
+      "node_id": "risk_analysis",
+      "detail": {}
+    },
+    {
+      "at": "2026-09-15T05:18:20.039884Z",
+      "event_type": "node_succeeded",
+      "node_id": "risk_analysis",
+      "detail": {
+        "attempt": 1,
+        "findings": []
+      }
+    },
+    {
+      "at": "2026-09-15T05:18:20.040692Z",
+      "event_type": "node_skipped",
+      "node_id": "change_approval",
+      "detail": {}
+    },
+    {
+      "at": "2026-09-15T05:18:20.040855Z",
+      "event_type": "node_started",
+      "node_id": "implementation",
+      "detail": {}
+    },
+    {
+      "at": "2026-09-15T05:18:20.040914Z",
+      "event_type": "node_succeeded",
+      "node_id": "implementation",
+      "detail": {
+        "attempt": 1,
+        "findings": []
+      }
+    },
+    {
+      "at": "2026-09-15T05:18:20.041766Z",
+      "event_type": "node_started",
+      "node_id": "unit_testing",
+      "detail": {}
+    },
+    {
+      "at": "2026-09-15T05:18:20.041849Z",
+      "event_type": "node_succeeded",
+      "node_id": "unit_testing",
+      "detail": {
+        "attempt": 1,
+        "findings": []
+      }
+    },
+    {
+      "at": "2026-09-15T05:18:20.041859Z",
+      "event_type": "node_started",
+      "node_id": "integration_testing",
+      "detail": {}
+    },
+    {
+      "at": "2026-09-15T05:18:20.041881Z",
+      "event_type": "node_succeeded",
+      "node_id": "integration_testing",
+      "detail": {
+        "attempt": 1,
+        "findings": []
+      }
+    },
+    {
+      "at": "2026-09-15T05:18:20.041888Z",
+      "event_type": "node_started",
+      "node_id": "documentation",
+      "detail": {}
+    },
+    {
+      "at": "2026-09-15T05:18:20.041909Z",
+      "event_type": "node_succeeded",
+      "node_id": "documentation",
+      "detail": {
+        "attempt": 1,
+        "findings": []
+      }
+    },
+    {
+      "at": "2026-09-15T05:18:20.041913Z",
+      "event_type": "node_started",
+      "node_id": "security_review",
+      "detail": {}
+    },
+    {
+      "at": "2026-09-15T05:18:20.041946Z",
+      "event_type": "node_succeeded",
+      "node_id": "security_review",
+      "detail": {
+        "attempt": 1,
+        "findings": []
+      }
+    },
+    {
+      "at": "2026-09-15T05:18:20.043929Z",
+      "event_type": "node_started",
+      "node_id": "release_readiness",
+      "detail": {}
+    },
+    {
+      "at": "2026-09-15T05:18:20.043970Z",
+      "event_type": "node_succeeded",
+      "node_id": "release_readiness",
+      "detail": {
+        "attempt": 1,
+        "findings": []
+      }
+    },
+    {
+      "at": "2026-09-15T05:18:20.044777Z",
+      "event_type": "approval_requested",
+      "node_id": "release_approval",
+      "detail": {}
+    },
+    {
+      "at": "2026-09-15T05:18:20.046013Z",
+      "event_type": "approval_recorded",
+      "node_id": "release_approval",
+      "detail": {
+        "approved": true,
+        "reviewer": "demo_release_reviewer",
+        "note": "All automated gates passed"
+      }
+    },
+    {
+      "at": "2026-09-15T05:18:20.046885Z",
+      "event_type": "node_started",
+      "node_id": "final_summary",
+      "detail": {}
+    },
+    {
+      "at": "2026-09-15T05:18:20.047217Z",
+      "event_type": "node_succeeded",
+      "node_id": "final_summary",
+      "detail": {
+        "attempt": 1,
+        "findings": []
+      }
+    },
+    {
+      "at": "2026-09-15T05:18:20.048140Z",
+      "event_type": "run_completed",
+      "node_id": null,
+      "detail": {}
+    }
+  ],
+  "retry_count": 0,
+  "rollback_count": 0
+}

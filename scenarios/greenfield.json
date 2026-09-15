@@ -1,0 +1,15 @@
+{
+  "name": "Greenfield custom aliases and expiration",
+  "scenario_type": "greenfield",
+  "requirement": "Create a URL shortener capability with custom aliases, optional expiration, redirect tracking, tests, and release controls.",
+  "expected_control_points": [
+    "No clarification required",
+    "Architecture and risk analysis execute independently after decomposition",
+    "Testing, documentation, and security review synchronize before release readiness",
+    "A transient implementation failure is retried within the configured bound",
+    "Human release approval is mandatory"
+  ],
+  "metadata": {
+    "simulate_transient_failure": true
+  }
+}

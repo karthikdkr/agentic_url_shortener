@@ -1,0 +1,11 @@
+{
+  "runs_total": 3,
+  "success_rate": 1.0,
+  "failed_or_safe_stopped": 0,
+  "retry_count": 1,
+  "rollback_count": 0,
+  "retry_frequency_per_run": 0.3333333333333333,
+  "rollback_frequency_per_run": 0.0,
+  "mean_end_to_end_latency_seconds": 0.012949333333333334,
+  "mttr_seconds": 0.01021
+}
